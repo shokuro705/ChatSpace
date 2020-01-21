@@ -1,1 +1,29 @@
-<チャット画面>
+.chat
+  .chat-header
+    .chat-header__left
+      %h2.group test
+      %ul.group__menber
+        Member :
+        %li masa
+    .chat-header__right
+      %a.edit-btn{href: '#'} Edit
+  .chat-main
+    .chat-main__message
+      .chat-main__message__head
+        %p.chat-main__message__head__group masa
+        %p.chat-main__message__head__date 2019/11/20(Wed) 17:43:01
+      %p.chat-main__message__text おはよう!
+      %img(src="" alt="")
+      .chat-main__message__head
+        %p.chat-main__message__head__group masa
+        %p.chat-main__message__head__date 2019/11/20(Wed) 17:43:34
+      %p.chat-main__message__text 今日は夜から雨
+      %img(src="" alt="")
+  .chat-footer
+    .chat-footer__form
+      .form-box
+        %input.form-box__input{ placeholder: 'type a message' }
+        %label.form-box__picture{class: ".chat-footer__form__image"}
+          = icon('far', 'far fa-image')
+          %input.form-box__stock{type: "file"}
+      %a.submit-btn{herf: '#'} Send
