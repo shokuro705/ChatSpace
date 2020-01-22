@@ -1,0 +1,68 @@
+.chat-main {
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  background-color: #fafafa;
+  &__message {
+    padding-bottom: 40px;
+    &__head {
+      display: flex;
+      margin-bottom: 10px;
+      &__group {
+        color: $WeightGray;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+    .chat-main__message__text {
+      color: $LightGray;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.chat-footer {
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+  &__form {
+    display: flex;
+    .form-box {
+      position: relative;
+      width: 100%;
+      .form-box__input {
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: $LightGray;
+        border-style: none;
+      }
+      .form-box__picture {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        icon {
+          display: inline-block;
+        }
+        .form-box__stock {
+          display: none;
+        }
+      }
+    }
+    .submit-btn {
+      height: 50px;
+      padding: 15px 30px;
+      margin-left: 15px;
+      background-color: $LightBlue;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
