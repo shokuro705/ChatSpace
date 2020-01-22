@@ -8,7 +8,7 @@
         = link_to '#', class: 'side-header__box__icon__edit fa-inverse' do
           %i.fa.fa-edit
         %li.side-header__box__icon__entry
-        = link_to 'edit_user_path(current_user)', class: 'side-header__box__icon__entry fa-inverse' do
+        = link_to edit_user_path(current_user), class: 'side-header__box__icon__entry fa-inverse' do
           %i.fa.fa-cog
   .side-groups
     %p.side-groups__name test
