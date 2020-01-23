@@ -20,10 +20,10 @@
       %p.chat-main__message__text 今日は夜から雨
       %img(src="" alt="")
   .chat-footer
+    = form_for [@group, @message] do |f|
     .chat-footer__form
-      .form-box
-        %input.form-box__input{ placeholder: 'type a message' }
-        %label.form-box__picture{class: ".chat-footer__form__image"}
-          = icon('far', 'far fa-image')
-          %input.form-box__stock{type: "file"}
-      %a.submit-btn{herf: '#'} Send
+      = f.text_field :content, class: 'form-box__input' placeholder: 'type a message'
+      = f.label :image, class: 'orm-box__picture' do
+        = icon('far', 'far fa-image')
+        = f.file_field :image, class: 'form-box__stock'
+      = f.submit 'Send', class: 'submit-btn'
