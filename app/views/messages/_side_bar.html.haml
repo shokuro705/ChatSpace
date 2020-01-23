@@ -5,12 +5,18 @@
         = current_user.name
       %ul.side-header__box__icon
         %li.side-header__box__icon__edit
-        = link_to '#', class: 'side-header__box__icon__edit fa-inverse' do
+        = link_to new_group_path, class: 'side-header__box__icon__edit fa-inverse' do
           %i.fa.fa-edit
         %li.side-header__box__icon__entry
-        = link_to 'edit_user_path(current_user)', class: 'side-header__box__icon__entry fa-inverse' do
+        = link_to edit_user_path(current_user), class: 'side-header__box__icon__entry fa-inverse' do
           %i.fa.fa-cog
   .side-groups
-    %p.side-groups__name test
-    %p.side-groups__message まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .side-groups__name
+            = group.name
+          .side-groups__message
+            メッセージはまだありません。
+
 
