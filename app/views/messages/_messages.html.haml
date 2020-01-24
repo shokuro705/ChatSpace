@@ -1,29 +1,12 @@
-.chat
-  .chat-header
-    .chat-header__left
-      %h2.group test
-      %ul.group__menber
-        Member :
-        %li masa
-    .chat-header__right
-      %a.edit-btn{href: '#'} Edit
-  .chat-main
-    .chat-main__message
-      .chat-main__message__head
-        %p.chat-main__message__head__group
-          = message.user.name
-        %p.chat-main__message__head__date
-          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-      - if message.content.present?
-      %p.chat-main__message__text
-        = message.content
-      = image_tag message.image.url, class: 'img' if message.image.present?
+.chat-main
+  .chat-main__message
+    .chat-main__message__head
+      %p.chat-main__message__head__group
+        = message.user.name
+      %p.chat-main__message__head__date
+        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    - if message.content.present?
+    %p.chat-main__message__text
+      = message.content
+    = image_tag message.image.url, class: 'img' if message.image.present?
       %img(src="" alt="")
-  .chat-footer
-    = form_for [@group, @message] do |f|
-    .chat-footer__form
-      = f.text_field :content, class: 'form-box__input' placeholder: 'type a message'
-      = f.label :image, class: 'orm-box__picture' do
-        = icon('far', 'far fa-image')
-        = f.file_field :image, class: 'form-box__stock'
-      = f.submit 'Send', class: 'submit-btn'
