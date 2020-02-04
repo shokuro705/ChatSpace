@@ -1,14 +1,14 @@
 .chat
-  .chat-header
-    .chat-header__left
-      .group__name
+  .header
+    .left-header
+      .left-header__title
         = @group.name
-      %ul.group__menber
+      %ul.left-header__menbers
         Member :
         %li.member
           - @group.group_users.each do |group_user|
             = group_user.user.name
-    .chat-header__right
+    .right__header
       = link_to "Edit", edit_group_path(@group)
 
   .messages
