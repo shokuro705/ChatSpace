@@ -1,65 +1,65 @@
 .chat {
-  float: left;
-  width: calc(100vw - 300px);
-  .chat-header {
+  float: right;
+  width: calc(100% - 300px);
+  .header {
     box-sizing: border-box;
     height: 100px;
     padding: 0 40px;
-    &__left {
+    display:flex;
+    justify-content: space-between;
+    .left-header {
       float: left;
-      .group__name {
+      &__title {
         color: #333;
         font-size: 20px;
         margin-top: 35px;
       }
-      .group__menber {
+      &__members {
         color: #999;
         display: flex;
         font-size: 12px;
         margin-top: 15px;
-        &__name {
+        .member {
           display: inline-block;
           padding-right: 5px;
         }
       }
     }
-    .chat-header__right {
+    .right__header a {
       border: 1px solid $light_blue;
       color: $light_blue;
       float: right;
       height: 40px;
       line-height: 40px;
-      margin-top: 28px;
+      margin: 28px 20px 28px 0;
       padding: 0 20px;
-    }
-    a {
-      color: $light_blue;
+      text-decoration: none;
     }
   }
 
-  .chat-main {
+  .messages {
     background-color: #FAFAFA;
     box-sizing: border-box;
     padding: 46px 40px 0;
     height: calc(100vh - 100px - 90px);
     overflow: scroll;
-    &__message {
-      &__head {
+    .message {
+      .upper-message {
         display: flex;
-        &__group {
+        &__user-name {
           color: #434a54;
           font-size: 16px;
           font-weight: bold;
         }
         &__date {
-          color: #999999;
+          color: #999;
           font-size: 12px;
-          margin-left: 10px;
+          padding-left: 10px;
         }
       }
-      .chat-main__text {
+      .lower-message {
         margin-top: 10px;
-        .chat-main__message__text {
+        &__content {
           color: #434a54;
           font-size: 14px;
           margin-bottom: 40px;
@@ -78,7 +78,7 @@
       float: left;
       height: 50px;
       width: calc(100% - 150px);
-      padding-left: 10px;
+      padding-left: 5px;
     }
     &__mask {
       background-color: $white;
