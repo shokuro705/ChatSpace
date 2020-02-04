@@ -39,7 +39,6 @@ $(function(){
      return html;
    };
  }
-// $('.js-form').on('submit', function(e){
   $('#new_message').on('submit', function(e){
  e.preventDefault();
  var formData = new FormData(this);
